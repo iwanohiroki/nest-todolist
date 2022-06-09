@@ -32,13 +32,11 @@ generator nestgraphql {
 model User {
   /// @Field(() => ID)
   id          Int       @id @default(autoincrement())
-  /// @Validator.@IsEmail()
-  email       String    @unique
   /// @Validator.IsNotEmpty()
   name        String
-  /// @HideField()
-  /// @Validator.MinLength(8)
-  password    String
+  /// @Validator.IsNotEmpty()
+  todo        Int
+  
   /// @HideField({ input: true, output: true })
   createdAt DateTime @default(now())
   /// @HideField({ input: true, output: true })
